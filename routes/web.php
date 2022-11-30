@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/saludo', function () {
+    return "HOLA MUNDO DESDE LARAVEL";
+});
+
+Route::get('/galeria/{numero}', function ($numero) {
+    return "FOTO DE CODIGO: ".$numero ;
+}) -> where('numero','[0-9]+');
+
+Route::view('/galeria','pagGaleria', ['valor'=>15])->name('xGaleria');
+///////// ARRIBAa////
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
