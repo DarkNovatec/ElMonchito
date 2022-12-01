@@ -10,7 +10,7 @@
     <a href="{{ route('xIndex') }}">Inicio</a><br>
     <a href="{{ route('xGaleria') }}">Galeria</a><br>
     <a href="{{ route('xLista') }}">Lista</a><br>
-    <h1>PAGINA GALERIA </h1>
-    <h3>Foto de codigo {{$valor}}</h3>
+   <h1>PAGINA LISTA</h1>
+   <h3>LISTA</h3>
 </body>
 </html>

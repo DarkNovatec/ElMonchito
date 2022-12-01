@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PagesController::class, 'fnIndex'])-> name ('xIndex');
 
 Route::get('/saludo', function () {
     return "HOLA MUNDO DESDE LARAVEL";
@@ -26,6 +24,11 @@ Route::get('/galeria/{numero}', function ($numero) {
 }) -> where('numero','[0-9]+');
 
 Route::view('/galeria','pagGaleria', ['valor'=>15])->name('xGaleria');
+
+Route::get('/lista', [PagesController::class, 'fnLista'])-> name ('xLista');
+
+Route::get('/', [PagesController::class, 'fnIndex'])-> name ('xIndex');
+
 ///////// ARRIBAa////
 Route::middleware([
     'auth:sanctum',
