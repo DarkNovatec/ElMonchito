@@ -6,15 +6,14 @@
 
 @section('seccion')
     <h3>LISTA</h3>
-    <table class="table">
-        <thead class="table-dark">
+    <table class="table table-dark table-sm">
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Codigo</th>
             <th scope="col">Apellidos y Nombres</th>
             <th scope="col">Handle</th>
         </tr>
-        </thead>
+        
         <tbody>
             @foreach($xAlumnos as $item)
             <tr>
