@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{{ route('xIndex') }}">Inicio</a><br>
-    <a href="{{ route('xGaleria') }}">Galeria</a><br>
-    <a href="{{ route('xLista') }}">Lista</a><br>
+@extends ('PagPlantilla')
+
+@section('Titulo del Monchito')
     <h1>PAGINA GALERIA </h1>
-    <h3>Foto de codigo {{$valor}}</h3>
-</body>
-</html>
+@endsection
+
+@section('Cuerpo del mochito')
+    <h3>Primer valor:  {{$valor}}--{{$otro}}</h3>
+    <h3>Segundo valor:  {{$otro}}</h3>
+@endsection
+    

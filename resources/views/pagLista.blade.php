@@ -1,16 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <a href="{{ route('xIndex') }}">Inicio</a><br>
-    <a href="{{ route('xGaleria') }}">Galeria</a><br>
-    <a href="{{ route('xLista') }}">Lista</a><br>
-   <h1>PAGINA LISTA</h1>
-   <h3>LISTA</h3>
-</body>
-</html>
+@extends ('PagPlantilla')
+
+@section('Titulo del Monchito')
+    <h1 class="display-4">PAGINA LISTA</h1>
+@endsection
+
+@section('seccion')
+    <h3>LISTA</h3>
+    <table class="table">
+        <thead class="table-dark">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">Apellidos y Nombres</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach($xAlumnos as $item)
+            <tr>
+                <th scope="row">{{$item->id}}</th>
+                <td>{{$item->CodEst}}</td>
+                <td>
+                    <a href="{{ route('Estudiante.xDetalle', $item->id)}}">
+                        {{$item->ApeEst}}, {{$item->NomEst}}
+                    </a>
+                </td>
+                <td>@mdo</td>
+            </tr>
+            @endforeach            
+        </tbody>
+    </table>
+@endsection
+
+
+   
